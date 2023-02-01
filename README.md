@@ -65,5 +65,9 @@ hdfs dfs -ls /tmp/hdfs_odev/
 ```
 
 
-
+## 11. Delete the datasets
+```
+hdfs dfs -rm /tmp/hdfs_odev
+hdfs dfs -ls /tmp/
+```
 
