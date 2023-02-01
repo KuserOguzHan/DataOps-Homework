@@ -35,8 +35,17 @@ load data inpath '/user/train/hdfs_odev/Wine.csv' into table wine;
 select * from wine limit 10;
 ```
 
+# Check
 
+```
+hdfs dfs -head /user/train/hdfs_odev/Wine.csv
 
+hdfs dfs -ls /user/hive
+
+hdfs dfs -ls /user/hive/warehouse
+
+hdfs dfs -ls /user/hive/warehouse/wine
+```
 
 
 
