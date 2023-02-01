@@ -70,4 +70,7 @@ hdfs dfs -ls /tmp/hdfs_odev/
 hdfs dfs -rm /tmp/hdfs_odev
 hdfs dfs -ls /tmp/
 ```
-
+## 12. We have to change chmod tmp to Explore `/user/train/hdfs_odev/Wine.csv` file from web hdfs.
+```
+hdfs dfs -chmod 777 /tmp
+```
