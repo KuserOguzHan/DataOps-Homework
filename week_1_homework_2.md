@@ -79,14 +79,34 @@ hdfs dfs -ls /user/train
 ls -l ~/datasets/
 ```
 
-## 8. Send with put
+## 10. Send with put
 
 ```
 hdfs dfs -put ~/datasets/employe.csv /user/train/company
 ```
 
-## 9. Check Compan in Datasets
+## 11. Check Compan in Datasets
 
 ```
 hdfs dfs -ls  /user/train/company/
 ```
+```
+hdfs dfs -head  /user/train/company/employe.csv
+```
+
+## 11. Check Compan in Datasets
+
+```
+hdfs dfs -ls  /user/train/company/
+```
+
+
+### create table  name|work_place|gender_age|skills_score
+```
+create table if not exists wine
+(name, work_place, gender_age, skills_score)
+row format delimited
+fields terminated by '|'
+lines terminated by '\n'
+tblproperties('skip.header.line.count'='1');
+
