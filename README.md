@@ -74,3 +74,4 @@ hdfs dfs -ls /tmp/
 ```
 hdfs dfs -chmod 777 /tmp
 ```
+http://127.0.0.1:9870/explorer.html#/ in Linux
