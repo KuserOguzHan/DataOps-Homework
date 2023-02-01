@@ -26,7 +26,7 @@ show tables;
 describe wine;
 ```
 
-## 2. Load data to hive table
+## 3. Load data to hive table
 ```
 load data inpath '/user/train/hdfs_odev/Wine.csv' into table wine;
 ```
