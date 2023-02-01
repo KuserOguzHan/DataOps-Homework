@@ -1,4 +1,4 @@
-## Check to files
+## 0. Check to files
 ```
 hdfs dfs -ls /
 ```
