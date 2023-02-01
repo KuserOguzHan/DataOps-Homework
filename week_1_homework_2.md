@@ -57,9 +57,36 @@ create table wine_alc_gt_13 as select * from wine where wine.alcohol > 13.00;
 select count(1) from wine_alc_gt_13;
 ```
 
+## 5. Drop table and dataset only one specail query
 
 
+## 6. Load DataSets
+```
+wget https://raw.githubusercontent.com/erkansirin78/datasets/master/hive/employee.txt -O ~/datasets/employe.csv
+```
 
+## 7. Create database
+```
+hdfs dfs -mkdir /user/train/company
+```
 
+## 8. Check database company
+```
+hdfs dfs -ls /user/train
+```
+## 9. Check datasets
+```
+ls -l ~/datasets/
+```
 
+## 8. Send with put
 
+```
+hdfs dfs -put ~/datasets/employe.csv /user/train/company
+```
+
+## 9. Check Compan in Datasets
+
+```
+hdfs dfs -ls  /user/train/company/
+```
