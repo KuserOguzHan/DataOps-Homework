@@ -1,3 +1,14 @@
+## Check to files
+```
+hdfs dfs -ls /
+```
+```
+hdfs dfs -ls /user
+```
+```
+hdfs dfs -ls /user/train
+```
+
 ## 1. Create new file
 
 ```
@@ -9,7 +20,7 @@ hdfs dfs -mkdir /user/train/hdfs_odev
 hdfs dfs -ls /user/train/
 ```
 
-## 3. Dowland DataSets
+## 3. Dowland DataSets in local
 ```
 wget https://raw.githubusercontent.com/erkansirin78/datasets/master/Wine.csv -O ~/datasets/Wine.csv
 ```
@@ -36,6 +47,19 @@ hdfs dfs -ls  /user/train/hdfs_odev/Wine.csv
 ```
 hdfs dfs -head  /user/train/hdfs_odev/Wine.csv
 ```
+
+## 8. Create new file in temp
+```
+hdfs dfs -mkdir /tmp/hdfs_odev
+```
+
+
+
+
+
+
+
+
 
 
 
