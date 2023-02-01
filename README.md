@@ -53,13 +53,16 @@ hdfs dfs -head  /user/train/hdfs_odev/Wine.csv
 hdfs dfs -mkdir /tmp/hdfs_odev
 ```
 
+## 9. Copies /user/train/hdfs_odev/Wine.csv` to `/tmp/hdfs_odevy
+```
+hdfs dfs -cp /user/train/hdfs_odev/Wine.csv /tmp/hdfs_odev/Wine.csv
+```
 
 
-
-
-
-
-
+## 10. Check the datasets
+```
+hdfs dfs -ls /tmp/hdfs_odev/
+```
 
 
 
