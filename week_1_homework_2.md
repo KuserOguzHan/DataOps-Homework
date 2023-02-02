@@ -78,7 +78,7 @@ jdbc:hive2://127.0.0.1:10000> drop database hive_odev cascade;
 jdbc:hive2://127.0.0.1:10000> show databases;
 ```
 
-## 6. Load DataSets
+## 6. Dowlond DataSets
 ```
 wget https://raw.githubusercontent.com/erkansirin78/datasets/master/hive/employee.txt -O ~/datasets/employe.csv
 ```
