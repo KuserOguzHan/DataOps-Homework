@@ -122,7 +122,7 @@ show databases;
 ```
 use company;
 ```
-## 8.Create table
+## 8. Create table
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
