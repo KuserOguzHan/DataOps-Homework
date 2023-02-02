@@ -42,7 +42,9 @@ hdfs dfs -put ~/datasets/Wine.csv /user/train/hdfs_odev
 ```
 
 ### Check the dataset
-
+```
+hdfs dfs -ls /tmp/hdfs_odev/
+```
 ```
 hdfs dfs -ls  /user/train/hdfs_odev/Wine.csv
 ```
