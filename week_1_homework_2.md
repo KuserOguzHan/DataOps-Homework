@@ -34,7 +34,7 @@ show databases;
 use hive_odev;
 ```
 
-### create table
+### Create table
 
 0: jdbc:hive2://127.0.0.1:10000> 
 
