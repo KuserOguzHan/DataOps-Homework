@@ -98,7 +98,7 @@ show databases;
 ```
 use company;
 ```
-## 8. Create table
+## 8.Create table
 ```
 create table employee (name string,work_place array<string>,gender_age struct <gender:string,age:int>,skills_score map<string,int>)
 row format delimited
@@ -108,7 +108,7 @@ map keys terminated by ':'
 stored as textfile
 tblproperties('skip.header.line.count'='1');
 ```
-##Show table
+## Show table
 ```
 show tables;
 ```
