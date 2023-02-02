@@ -82,6 +82,10 @@ jdbc:hive2://127.0.0.1:10000> show databases;
 ```
 wget https://raw.githubusercontent.com/erkansirin78/datasets/master/hive/employee.txt -O ~/datasets/employe.csv
 ```
+## Check DataSets
+```
+ls -l ~/datasets/
+```
 
 ## 7. Create database
 ```
@@ -108,16 +112,8 @@ tblproperties('skip.header.line.count'='1');
 ```
 show tables;
 ```
-## 9. Dowland datasets
-```
-[train@trainvm ~]$ wget https://raw.githubusercontent.com/erkansirin78/datasets/master/hive/employee.txt -O ~/datasets/employee.txt
-```
-## Check DataSets
-```
-ls -l ~/datasets/
-```
 
-## 10. Send with put
+## 9. Send with put
 
 ```
 [train@trainvm ~]$ hdfs dfs -put ~/datasets/employee.txt /user/train/hdfs_odev
