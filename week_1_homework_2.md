@@ -1,11 +1,20 @@
+## 1. Start Hadoop services
+
+[train@localhost play]$ start-all.sh
+
+
 ## 1. Create a table that suits data in hdfs. To learn what to create, better to see data first
 ```
 hdfs dfs -head  /user/train/hdfs_odev/Wine.csv
 ```
-## 2. Create table.
-```
-[train@localhost ~]$ beeline -u jdbc:hive2://localhost:10000
-```
+## 2. Beeline connection  
+`[train@localhost play]$ beeline -u jdbc:hive2://127.0.0.1:10000`
+
+You should see `0: jdbc:hive2://127.0.0.1:10000>` means beeline shell is ready to use.  
+
+Close logs  
+`  0: jdbc:hive2://127.0.0.1:10000> set hive.server2.logging.operation.level=NONE;  `  
+
 
 ### create table
 ```
