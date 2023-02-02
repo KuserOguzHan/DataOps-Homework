@@ -70,7 +70,7 @@ hdfs dfs -put ~/datasets/Wine.csv /user/train/hdfs_odev
 load data inpath '/user/train/hdfs_odev/Wine.csv' into table wine;
 ```
 
-## Show
+### Show
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
@@ -104,7 +104,7 @@ show databases;
 ```
 wget https://raw.githubusercontent.com/erkansirin78/datasets/master/hive/employee.txt -O ~/datasets/employe.csv
 ```
-## Check DataSets
+### Check DataSets
 ```
 ls -l ~/datasets/
 ```
