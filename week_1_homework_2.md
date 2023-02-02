@@ -151,3 +151,12 @@ hdfs dfs -put ~/datasets/employee.txt /user/train/hdfs_odev
 load data inpath '/user/train/hdfs_odev/employee.txt' into table employee;
 ```
 
+## 10. Write a query that returns the employees whose Python skill is greater than 70.
+
+0: jdbc:hive2://127.0.0.1:10000> 
+```
+select * from employee where skills_score["Python"] > 70;
+```
+
+
+
