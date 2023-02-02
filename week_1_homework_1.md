@@ -1,4 +1,6 @@
 ## 0. Check to files
+
+[train@localhost play]$
 ```
 hdfs dfs -ls /
 ```
@@ -11,66 +13,78 @@ hdfs dfs -ls /user/train
 
 ## 1. Create new file
 
+[train@localhost play]$
 ```
 hdfs dfs -mkdir /user/train/hdfs_odev
 ```
 
-## 2. Check the file
+### Check the file
 ```
 hdfs dfs -ls /user/train/
 ```
 
-## 3. Dowland DataSets in local
+## 2. Download DataSets in local
+
+[train@localhost play]$
 ```
 wget https://raw.githubusercontent.com/erkansirin78/datasets/master/Wine.csv -O ~/datasets/Wine.csv
 ```
 
-## 4. Check DataSets
+### Check DataSets
 ```
 ls -l ~/datasets/
 ```
 
-## 5. Put DataSets from local to hdfs
-
+## 3. Put DataSets from local to hdfs
+[train@localhost play]$
 ```
 hdfs dfs -put ~/datasets/Wine.csv /user/train/hdfs_odev
 ```
 
-## 6. Check the dataset
+### Check the dataset
 
 ```
 hdfs dfs -ls  /user/train/hdfs_odev/Wine.csv
 ```
 
-## 7. Look at the datasets
+## 4. Look at the datasets
 
+[train@localhost play]$
 ```
 hdfs dfs -head  /user/train/hdfs_odev/Wine.csv
 ```
 
-## 8. Create new file in temp
+## 5. Create new file in temp
+
 ```
 hdfs dfs -mkdir /tmp/hdfs_odev
 ```
 
-## 9. Copies /user/train/hdfs_odev/Wine.csv` to `/tmp/hdfs_odev
+## 6. Copies /user/train/hdfs_odev/Wine.csv` to `/tmp/hdfs_odev
+
+[train@localhost play]$
 ```
 hdfs dfs -cp /user/train/hdfs_odev/Wine.csv /tmp/hdfs_odev/Wine.csv
 ```
 
 
-## 10. Check the datasets
+### Check the datasets
 ```
 hdfs dfs -ls /tmp/hdfs_odev/
 ```
 
 
-## 11. Delete the datasets
+## 7. Delete the datasets
+
+[train@localhost play]$
 ```
 hdfs dfs -rm /tmp/hdfs_odev
 hdfs dfs -ls /tmp/
 ```
-## 12. We have to change chmod tmp to Explore `/user/train/hdfs_odev/Wine.csv` file from web hdfs.
+
+## 8. We have to change the chmod of the tmp to Explore `/user/train/hdfs_odev/Wine.csv` file from web hdfs.
+
+[train@localhost play]$
 ```
 hdfs dfs -chmod 777 /tmp
 ```
