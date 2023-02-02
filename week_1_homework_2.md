@@ -155,7 +155,7 @@ load data inpath '/user/train/hdfs_odev/employee.txt' into table employee;
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
-select * from employee where skills_score["Python"] > 70;
+select * from employee where skills_score["Python"] > 70; 
 ```
 
 
