@@ -98,7 +98,7 @@ drop database hive_odev cascade;
 show databases;
 ```
 
-## 6. Dowlond DataSets
+## 6. Download DataSets
 
 [train@trainvm ~]$
 ```
