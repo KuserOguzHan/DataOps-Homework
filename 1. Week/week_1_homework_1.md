@@ -7,6 +7,7 @@
 - Delete `/tmp/hdfs_odev` directory with skipping the trash. 
 
 - Explore `/user/train/hdfs_odev/Wine.csv` file from web hdfs.  
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ## Answers
 
