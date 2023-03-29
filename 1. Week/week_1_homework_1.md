@@ -1,4 +1,4 @@
-## Questions for Training
+## Questions
 
 - Download and put `https://raw.githubusercontent.com/erkansirin78/datasets/master/Wine.csv` dataset in hdfs `/user/train/hdfs_odev` directory.
 
