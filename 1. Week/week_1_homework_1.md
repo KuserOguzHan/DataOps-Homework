@@ -1,11 +1,24 @@
-## 0. Start Hadoop services
+## Questions for Training
+
+- Download and put `https://raw.githubusercontent.com/erkansirin78/datasets/master/Wine.csv` dataset in hdfs `/user/train/hdfs_odev` directory.
+
+- Copy this hdfs file `/user/train/hdfs_odev/Wine.csv` to `/tmp/hdfs_odev` hdfs directory.
+
+- Delete `/tmp/hdfs_odev` directory with skipping the trash. 
+
+- Explore `/user/train/hdfs_odev/Wine.csv` file from web hdfs.  
+
+
+
+
+### 0. Start Hadoop services
 
 [train@localhost play]$ 
 ```
 start-all.sh
 ```
 
-## 1. Check to files
+### 1. Check to files
 
 [train@localhost play]$
 ```
@@ -18,7 +31,7 @@ hdfs dfs -ls /user
 hdfs dfs -ls /user/train
 ```
 
-## 2. Create new file
+### 2. Create new file
 
 [train@localhost play]$
 ```
@@ -30,7 +43,7 @@ hdfs dfs -mkdir /user/train/hdfs_odev
 hdfs dfs -ls /user/train/
 ```
 
-## 3. Download DataSets in local
+### 3. Download DataSets in local
 
 [train@localhost play]$
 ```
@@ -42,7 +55,7 @@ wget https://raw.githubusercontent.com/erkansirin78/datasets/master/Wine.csv -O 
 ls -l ~/datasets/
 ```
 
-## 4. Put DataSets from local to hdfs
+### 4. Put DataSets from local to hdfs
 [train@localhost play]$
 ```
 hdfs dfs -put ~/datasets/Wine.csv /user/train/hdfs_odev
@@ -53,20 +66,20 @@ hdfs dfs -put ~/datasets/Wine.csv /user/train/hdfs_odev
 hdfs dfs -ls  /user/train/hdfs_odev/Wine.csv
 ```
 
-## 5. Look at the datasets
+### 5. Look at the datasets
 
 [train@localhost play]$
 ```
 hdfs dfs -head  /user/train/hdfs_odev/Wine.csv
 ```
 
-## 6. Create new file in temp
+### 6. Create new file in temp
 
 ```
 hdfs dfs -mkdir /tmp/hdfs_odev
 ```
 
-## 7. Copies /user/train/hdfs_odev/Wine.csv` to `/tmp/hdfs_odev
+### 7. Copies /user/train/hdfs_odev/Wine.csv` to `/tmp/hdfs_odev
 
 [train@localhost play]$
 ```
@@ -80,7 +93,7 @@ hdfs dfs -ls /tmp/hdfs_odev/
 ```
 
 
-## 8. Delete the datasets
+### 8. Delete the datasets
 
 [train@localhost play]$
 ```
@@ -88,7 +101,7 @@ hdfs dfs -rm /tmp/hdfs_odev
 hdfs dfs -ls /tmp/
 ```
 
-## 9. We have to change the chmod of the tmp to Explore `/user/train/hdfs_odev/Wine.csv` file from web hdfs.
+### 9. We have to change the chmod of the tmp to Explore `/user/train/hdfs_odev/Wine.csv` file from web hdfs.
 
 [train@localhost play]$
 ```
