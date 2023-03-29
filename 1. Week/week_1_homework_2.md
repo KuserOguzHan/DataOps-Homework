@@ -15,7 +15,7 @@
 # Answers
 
 
-## 0. Start Hadoop services
+### 0. Start Hadoop services
 
 [train@localhost play]$ 
 
@@ -23,7 +23,7 @@
 start-all.sh
 ```
 
-## 1. Beeline connection
+### 1. Beeline connection
 
 [train@localhost play]$ 
 ```
@@ -42,7 +42,7 @@ set hive.server2.logging.operation.level=NONE;
 ```
 
 
-## 2. Create database named "hive_odev"
+### 2. Create database named "hive_odev"
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
@@ -61,7 +61,7 @@ show databases;
 use hive_odev;
 ```
 
-### Create table
+#### Create table
 
 0: jdbc:hive2://127.0.0.1:10000> 
 
@@ -73,19 +73,19 @@ fields terminated by ','
 lines terminated by '\n'
 tblproperties('skip.header.line.count'='1');
 ```
-### Show table
+#### Show table
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
 show tables;
 ```
 
-### Describe table
+#### Describe table
 ```
 describe wine;
 ```
 
-## 3. Load data to hive table
+### 3. Load data to hive table
 
 [train@trainvm ~]$ 
 ```
@@ -97,14 +97,14 @@ hdfs dfs -put ~/datasets/Wine.csv /user/train/hdfs_odev
 load data inpath '/user/train/hdfs_odev/Wine.csv' into table wine;
 ```
 
-### Show
+#### Show
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
 select * from wine limit 10;
 ```
 
-## 4. Create a table with a query
+### 4. Create a table with a query
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
@@ -115,7 +115,7 @@ create table wine_alc_gt_13 as select * from wine where wine.alcohol > 13.00;
 select count(1) from wine_alc_gt_13;
 ```
 
-## 5. Drop table and dataset only one specail query
+### 5. Drop table and dataset only one specail query
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
@@ -125,18 +125,19 @@ drop database hive_odev cascade;
 show databases;
 ```
 
-## 6. Download DataSets
+### 6. Download DataSets
 
 [train@trainvm ~]$
 ```
 wget https://raw.githubusercontent.com/erkansirin78/datasets/master/hive/employee.txt -O ~/datasets/employe.csv
 ```
-### Check DataSets
+
+#### Check DataSets
 ```
 ls -l ~/datasets/
 ```
 
-## 7. Create database
+### 7. Create database
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
@@ -149,7 +150,8 @@ show databases;
 ```
 use company;
 ```
-## 8. Create table
+
+#### 8. Create table
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
@@ -161,12 +163,13 @@ map keys terminated by ':'
 stored as textfile
 tblproperties('skip.header.line.count'='1');
 ```
-## Show table
+
+#### Show table
 ```
 show tables;
 ```
 
-## 9. Send with put
+### 9. Send with put
 
 [train@trainvm ~]$ 
 ```
@@ -178,7 +181,7 @@ hdfs dfs -put ~/datasets/employee.txt /user/train/hdfs_odev
 load data inpath '/user/train/hdfs_odev/employee.txt' into table employee;
 ```
 
-## 10. Write a query that returns the employees whose Python skill is greater than 70.
+### 10. Write a query that returns the employees whose Python skill is greater than 70.
 
 0: jdbc:hive2://127.0.0.1:10000> 
 ```
