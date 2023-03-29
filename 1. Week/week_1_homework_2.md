@@ -1,7 +1,27 @@
+# Questions 
+
+- Create a hive database `hive_odev` and load this data https://raw.githubusercontent.com/erkansirin78/datasets/master/Wine.csv into `wine` table.
+
+- In `wine` table filter records that `Alcohol`greater than 13.00 then insert these records into `wine_alc_gt_13` table.
+
+- Drop `hive_odev` database including underlying tables in a single command.
+
+- Load this https://raw.githubusercontent.com/erkansirin78/datasets/master/hive/employee.txt into table `employee` in `company` database. 
+
+- Write a query that returns the employees whose Python skill is greater than 70.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Answers
+
+
 ## 0. Start Hadoop services
 
-[train@localhost play]$ start-all.sh
+[train@localhost play]$ 
 
+```
+start-all.sh
+```
 
 ## 1. Beeline connection
 
