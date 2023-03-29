@@ -9,8 +9,6 @@
 - Explore `/user/train/hdfs_odev/Wine.csv` file from web hdfs.  
 
 
-
-
 ### 0. Start Hadoop services
 
 [train@localhost play]$ 
@@ -38,7 +36,7 @@ hdfs dfs -ls /user/train
 hdfs dfs -mkdir /user/train/hdfs_odev
 ```
 
-### Check the file
+#### Check the file
 ```
 hdfs dfs -ls /user/train/
 ```
@@ -50,7 +48,7 @@ hdfs dfs -ls /user/train/
 wget https://raw.githubusercontent.com/erkansirin78/datasets/master/Wine.csv -O ~/datasets/Wine.csv
 ```
 
-### Check DataSets
+#### Check DataSets
 ```
 ls -l ~/datasets/
 ```
@@ -61,7 +59,7 @@ ls -l ~/datasets/
 hdfs dfs -put ~/datasets/Wine.csv /user/train/hdfs_odev
 ```
 
-### Check the dataset
+#### Check the dataset
 ```
 hdfs dfs -ls  /user/train/hdfs_odev/Wine.csv
 ```
@@ -87,7 +85,7 @@ hdfs dfs -cp /user/train/hdfs_odev/Wine.csv /tmp/hdfs_odev/Wine.csv
 ```
 
 
-### Check the datasets
+#### Check the datasets
 ```
 hdfs dfs -ls /tmp/hdfs_odev/
 ```
