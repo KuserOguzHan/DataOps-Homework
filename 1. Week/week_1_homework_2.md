@@ -32,8 +32,11 @@ beeline -u jdbc:hive2://127.0.0.1:10000
 
 You should see `0: jdbc:hive2://127.0.0.1:10000>` means beeline shell is ready to use.  
 
-Close logs  
+Close logs
+```
 0: jdbc:hive2://127.0.0.1:10000>
+```
+
 ```
 set hive.server2.logging.operation.level=NONE;
 ```
