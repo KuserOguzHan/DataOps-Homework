@@ -99,31 +99,21 @@ kafka-topics.sh --bootstrap-server localhost:9092 --list
 ```
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### XXXX. Delete a topic
+### 9. Delete a topic
 ```
-kafka-topics.sh --bootstrap-server localhost:9092 \
---delete --topic atscale
+(datagen) [train@trainvm data-generator]$ kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic churn
+```
+```
+(datagen) [train@trainvm data-generator]$ kafka-topics.sh --bootstrap-server localhost:9092 --delete --topic atscale
 ```
 
 ```
 kafka-topics.sh --bootstrap-server localhost:9092 --list
 ```
+
+
+
+
+
+
+
