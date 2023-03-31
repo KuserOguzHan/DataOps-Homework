@@ -38,10 +38,10 @@ kafka-topics.sh --bootstrap-server localhost:9092 \
 --describe --topic atscale
 
 
-Topic: topic1   PartitionCount: 3       ReplicationFactor: 1    Configs: segment.bytes=1073741824
-        Topic: topic1   Partition: 0    Leader: 0       Replicas: 0     Isr: 0
-        Topic: topic1   Partition: 1    Leader: 0       Replicas: 0     Isr: 0
-        Topic: topic1   Partition: 2    Leader: 0       Replicas: 0     Isr: 0
+Topic: atscale   PartitionCount: 2       ReplicationFactor: 1    Configs: segment.bytes=1073741824
+        Topic: atscale   Partition: 0    Leader: 0       Replicas: 0     Isr: 0
+        Topic: atscale   Partition: 1    Leader: 0       Replicas: 0     Isr: 0
+      
 ```
 
 ### 5. Delete a topic
