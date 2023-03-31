@@ -44,7 +44,81 @@ Topic: atscale   PartitionCount: 2       ReplicationFactor: 1    Configs: segmen
       
 ```
 
-### 5. Delete a topic
+### 5. Create New Topic For Question 4
+
+[train@trainvm]$ 
+```
+kafka-topics.sh --bootstrap-server localhost:9092 \
+--create --topic churn \
+--partitions 3 \
+--replication-factor 1
+```
+
+[train@trainvm]$ 
+```
+kafka-topics.sh --bootstrap-server localhost:9092 --list
+```
+
+### 6. Producing with data-generator
+- Use instructions in this repo to use data generator
+
+```
+[train@trainvm]$ git clone https://github.com/erkansirin78/data-generator.git
+```
+
+```
+[train@trainvm]$ cd data-generator/
+```
+
+```
+[train@trainvm data-generator]$ python3 -m virtualenv datagen
+```
+
+```
+[train@trainvm data-generator]$ source datagen/bin/activate
+```
+ 
+```
+(datagen) [train@trainvm data-generator]$ pip install -r requirements.txt
+```
+
+### 7. Create Consumer 
+
+- You open 3 terminal
+- Terminal 2,3,4
+  
+```  
+[train@trainvm]$ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic churn --group churn_group
+```
+
+### 8. Produce dataset 
+
+- Terminal 1
+```
+(datagen) [train@trainvm data-generator]$  python dataframe_to_kafka.py -i ~/datasets/Churn_Modelling.csv -t churn -k 1
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### XXXX. Delete a topic
 ```
 kafka-topics.sh --bootstrap-server localhost:9092 \
 --delete --topic atscale
