@@ -193,6 +193,11 @@ for i, val in enumerate(regions):
 my_producer.close()
 ```
 
+### 13. Question 7
+
+### 13.1 Create a Topic
+
+```
 
 
 
