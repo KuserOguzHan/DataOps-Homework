@@ -19,11 +19,11 @@ Key: 2, Value: Ege, Partition: 2, TS: 1613224667044
 - Chechk week.2.1.md 
 
 ```
-[train@trainvm zookeeperless_kafka]$ docker-compose ps
+[train@trainvm ~]$ cd dataops7/kafka/zookeeperless_kafka/
 ```
 
 ```
-[train@trainvm ~]$ cd dataops7/kafka/zookeeperless_kafka/
+[train@trainvm zookeeperless_kafka]$ docker-compose ps
 ```
 
 ```
