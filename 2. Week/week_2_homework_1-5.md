@@ -1,15 +1,15 @@
 ### 1. QUESTIONS
 
-### 1.  
+##### 1.  
 Create a topic named `atscale`, 2 partitions and replication factor 1.
 
-### 2. 
+##### 2. 
 List all topics.
 
-### 3. 
+##### 3. 
 Describe `atscale` topic.
 
-### 4. 
+##### 4. 
 Use data-generator and send `https://raw.githubusercontent.com/erkansirin78/datasets/master/Churn_Modelling.csv` to  3 patitioned `churn` topic.
 
 - Message key should be CustomerId.
@@ -20,7 +20,7 @@ Use data-generator and send `https://raw.githubusercontent.com/erkansirin78/data
 
 - Observe 500 messages.
 
-### 5. 
+##### 5. 
 Delete `atscale` and `churn` topics.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
