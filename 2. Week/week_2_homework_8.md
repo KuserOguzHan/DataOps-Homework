@@ -1,5 +1,27 @@
-### 15.
+### 1. Question
 
+Write a python function that fulfills the following requirements.
+- Arguments: KafkaAdminClient object, topic name, number of partitions and replication factor
+- Do not take any action if there is a topic with the same name
+- If there is no topic with the same name, it will create a topic using arguments
+
+def create_a_new_topic_if_not_exists(admin_client, topic_name="example-topic", num_partitions=1, replication_factor=1):
+	<YOUR CODE HERE>
+  
+  
+### 2. Start Kafka
+  
+  
+### 3. Open Pycharm Editor 
+  
+Create these files;
+  -.gitignore
+  - requirements.txt
+  - admin_client.py
+
+  
+### 4. Create function 
+  
 ```
 from kafka.admin import KafkaAdminClient, NewTopic
 
