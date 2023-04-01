@@ -198,6 +198,132 @@ my_producer.close()
 ### 13.1 Create a Topic
 
 ```
+from kafka.admin import KafkaAdminClient, NewTopic, ConfigResource, ConfigResourceType
+import time
+
+admin_client = KafkaAdminClient(bootstrap_servers=['localhost:9092', 'localhost:9292'],
+                                client_id='dataops_client')
+
+# List topics
+print("Created topics", admin_client.list_topics())
+
+# Create a topic
+try:
+    homework7 = NewTopic(name='homework7', num_partitions=2, replication_factor=2)
+
+    admin_client.create_topics(new_topics=[homework7])
+except:
+    print("Topics are already exist.")
+
+
+# List topics
+time.sleep(2)
+print("After create topics", admin_client.list_topics())
+```
+
+
+### 13.2 Create a Consumer.py
+
+```
+from message_parser import MessageParser
+from kafka import KafkaConsumer
+import re
+
+
+consumer = KafkaConsumer('homework7',
+                         group_id='group1',
+
+                         auto_offset_reset='earliest',
+
+                         enable_auto_commit=False,
+
+                         consumer_timeout_ms=10000,
+
+                         bootstrap_servers=['localhost:9092'])
+
+setosa_file_obj = open("/home/train/PycharmProjects/week_2_homework_7/tmp/kafka_out/setosa_out.txt", "a")
+versicolorfile_obj = open("/home/train/PycharmProjects/week_2_homework_7/tmp/kafka_out/versicolor_out.txt", "a")
+virginicafile_obj = open("/home/train/PycharmProjects/week_2_homework_7/tmp/kafka_out/virginica_out.txt", "a")
+other_obj = open("/home/train/PycharmProjects/week_2_homework_7/tmp/kafka_out/other_out.txt", "a")
+mp = MessageParser()
+
+for message in consumer:
+
+    print("topic: %s, partition: %d, offset: %d, key: %s value: %s" % (message.topic,
+                                                 message.partition,
+                                                 message.offset,
+                                                 message.key.decode('utf-8'),
+                                                 message.value.decode('utf-8')))
+
+    species = mp.message_splitter(message.value.decode('utf-8'))
+    print("Species: {} ".format(species))
+
+    if species == "setosa":
+        setosa_file_obj.write(
+            message.topic + "|" + str(message.partition) + "|" + str(message.offset) + "|" + message.key.decode(
+                'utf-8') + "|" + message.value.decode('utf-8') + "\n")
+
+    elif species == "versicolor":
+        versicolorfile_obj.write(
+            message.topic + "|" + str(message.partition) + "|" + str(message.offset) + "|" + message.key.decode(
+                'utf-8') + "|" + message.value.decode('utf-8') + "\n")
+
+    elif species == "virginica":
+        virginicafile_obj.write(
+            message.topic + "|" + str(message.partition) + "|" + str(message.offset) + "|" + message.key.decode(
+                'utf-8') + "|" + message.value.decode('utf-8') + "\n")
+    else:
+        other_obj.write(
+            message.topic + "|" + str(message.partition) + "|" + str(message.offset) + "|" + message.key.decode(
+                'utf-8') + "|" + message.value.decode('utf-8') + "\n")
+
+
+setosa_file_obj.close()
+versicolorfile_obj.close()
+virginicafile_obj.close()
+other_obj.close()
+
+```
+
+
+### 13.3 Create a MessageParser.py
+
+```
+import re
+class MessageParser:
+
+    def message_splitter(self, msg):
+        species = re.split(",", msg)[-1]
+        switcher = {
+            'Iris-setosa': "setosa",
+            'Iris-versicolor': "versicolor",
+            'Iris-virginica': "virginica",
+            None: "other"
+        }
+        return switcher.get(species)
+
+```
+
+### 14. Open Terminal
+
+```
+[train@trainvm ~]$ cd data-generator/
+```
+
+```
+[train@trainvm ~]$ source datagen/bin/activate
+```
+
+```
+ (datagen) [train@trainvm data-generator]$ python dataframe_to_kafka.py -t homework7
+```
+
+
+
+
+
+
+
 
 
 
