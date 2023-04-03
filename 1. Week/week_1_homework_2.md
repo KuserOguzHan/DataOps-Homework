@@ -173,7 +173,7 @@ show tables;
 
 [train@trainvm ~]$ 
 ```
-hdfs dfs -put ~/datasets/employee.txt /user/train/hdfs_odev
+hdfs dfs -put ~/datasets/employee.csv /user/train/hdfs_odev
 ```
 
 0: jdbc:hive2://127.0.0.1:10000> 
