@@ -100,3 +100,8 @@ for i, val in enumerate(regions):
 
 my_producer.close()
 ```
+
+###5. Run Consumer on terminal
+```
+[train@trainvm ~]$ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic homework1 --property print.key=true
+```
