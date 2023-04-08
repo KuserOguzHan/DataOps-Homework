@@ -136,7 +136,67 @@ virginicafile_obj.close()
 other_obj.close()
 
 ```
+-after changes
+```
+from message_parser import MessageParser
+from kafka import KafkaConsumer
+import re
 
+
+consumer = KafkaConsumer('homework7',
+                         group_id='group1',
+
+                         auto_offset_reset='earliest',
+
+                         enable_auto_commit=False,
+
+                         consumer_timeout_ms=10000,
+
+                         bootstrap_servers=['localhost:9092'])
+
+setosa_file = open("/home/train/PycharmProjects/homework7/tmp/kafka_out/setosa_out.txt", "a")
+versicolor_file = open("/home/train/PycharmProjects/homework7/tmp/kafka_out/versicolor_out.txt", "a")
+virginica_file = open("/home/train/PycharmProjects/homework7/tmp/kafka_out/virginica_out.txt", "a")
+other = open("/home/train/PycharmProjects/homework7/tmp/kafka_out/other_out.txt", "a")
+
+mp = MessageParser()
+
+for msg in consumer:
+
+    print("topic: %s, partition: %d, offset: %d, key: %s value: %s" % (msg.topic,
+                                                 msg.partition,
+                                                 msg.offset,
+                                                 msg.key.decode('utf-8'),
+                                                 msg.value.decode('utf-8')))
+
+    types = mp.msg_splitter(msg.value.decode('utf-8'))
+    print("Species: {} ".format(types))
+
+    if types == "setosa":
+        setosa_file.write(
+            msg.topic + "|" + str(msg.partition) + "|" + str(msg.offset) + "|" + msg.key.decode(
+                'utf-8') + "|" + msg.value.decode('utf-8') + "\n")
+
+    elif types == "versicolor":
+        versicolor_file.write(
+            msg.topic + "|" + str(msg.partition) + "|" + str(msg.offset) + "|" + msg.key.decode(
+                'utf-8') + "|" + msg.value.decode('utf-8') + "\n")
+
+    elif types == "virginica":
+        virginica_file.write(
+            msg.topic + "|" + str(msg.partition) + "|" + str(msg.offset) + "|" + msg.key.decode(
+                'utf-8') + "|" + msg.value.decode('utf-8') + "\n")
+    else:
+        other.write(
+            msg.topic + "|" + str(msg.partition) + "|" + str(msg.offset) + "|" + msg.key.decode(
+                'utf-8') + "|" + msg.value.decode('utf-8') + "\n")
+
+
+setosa_file.close()
+versicolor_file.close()
+virginica_file.close()
+other.close()
+```
 
 ### 5. Create message_parser.py
 
@@ -154,6 +214,22 @@ class MessageParser:
         }
         return switcher.get(species)
 
+```
+- after changes
+```
+
+import re
+class MessageParser:
+
+    def msg_splitter(self, msg):
+        types = re.split(",", msg)[-1]
+        switcher = {
+            'Iris-setosa': "setosa",
+            'Iris-versicolor': "versicolor",
+            'Iris-virginica': "virginica",
+            None: "other"
+        }
+        return switcher.get(types)
 ```
 
 ### 6. Open Terminal
