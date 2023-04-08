@@ -101,7 +101,23 @@ for i, val in enumerate(regions):
 my_producer.close()
 ```
 
-###5. Run Consumer on terminal
+### 5. Consumer
+- Run Consumer on terminal
 ```
 [train@trainvm ~]$ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic homework1 --property print.key=true
 ```
+- Create my_consumer.py on pycharm
+
+```
+from kafka import KafkaConsumer
+my_consumer = KafkaConsumer('homework1',bootstrap_servers=['localhost:9092','localhost:9292'],
+              client_id = 'my_consumer-1',
+              group_id="group1"
+                            )
+for msg in my_consumer:
+    print("Key: {}, Value: {}, Partition: {}, TS: {} ".format(msg.key.decode(), msg.value.decode(),
+                                                              msg.partition, msg.timestamp))
+```
+
+
+
