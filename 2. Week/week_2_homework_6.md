@@ -38,10 +38,18 @@ Key: 2, Value: Ege, Partition: 2, TS: 1613224667044
 [train@trainvm zookeeperless_kafka]$ docker-compose up -d
 ```
 
+### 3. Create Topic with Admin_client.py in Pycharm
+- Open pycharm editor and create new project and requirements.txt
 
-### 3. Creata Topic with Admin_client.py in Pycharm
+```
+kafka-python==2.0.2
 
-- Open pycharm editor and create new project and admin.client
+```
+-On pycharm terminal :
+```
+pip install -r requirements.txt
+```
+- create admin_client.py
 
 ```
 from kafka.admin import KafkaAdminClient, NewTopic, ConfigResource, ConfigResourceType
