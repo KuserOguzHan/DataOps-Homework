@@ -38,6 +38,12 @@ topic1|2|9|41|4.5,2.3,1.3,0.3,Iris-setosa
 Create these files;
   -.gitignore
   - requirements.txt
+
+```
+kafka-python==2.0.2
+
+``` 
+
   - admin_client.py
 
 
@@ -132,7 +138,7 @@ other_obj.close()
 ```
 
 
-### 5. Create a MessageParser.py
+### 5. Create message_parser.py
 
 ```
 import re
