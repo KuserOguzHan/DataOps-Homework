@@ -116,6 +116,75 @@ Batch: 14
 ```
 
 
+### 6.2 kod 2
+
+```
+from pyspark.sql import SparkSession, functions as F
+
+spark = SparkSession.builder.appName("homework5_1").getOrCreate()
+
+# prevent to error
+spark.sparkContext.setLogLevel('ERROR')
+
+
+# We must give schema to read
+df = spark.read.format("csv") \
+    .option("header", True) \
+    .option("inferSchema", True) \
+    .load("file:///tmp/iot-temp-input_schema")
+
+stream_schema = df.schema
+
+
+# Read from source
+line = spark.readStream.format("csv") \
+            .schema(stream_schema) \
+            .load("file:///tmp/iot-temp-input")
+
+
+line2 = (line.withColumn("event_time", F.to_timestamp(line.event_time, "y-M-d H:m:s.SSSSSS"))
+             .withColumn("year", F.year(F.col("event_time")))
+             .withColumn("month", F.month(F.col("event_time")))
+             .withColumn("dayofweek", F.date_format(F.col("event_time"), "E")))
+
+
+
+def write_to_multiple_sinks(df, batchId):
+    df.cache()
+    df.show()
+
+    (df.write
+       .format("csv")
+       .mode("append")
+       .option("numRows", 4)
+       .option("truncate", False))
+
+
+    (df.write
+       .format("csv")
+       .mode("append")
+       .save("file:///tmp/iot-temp-output"))
+
+
+    df.persist()
+
+
+checkpointDir = "file:///tmp/streaming/week5_1_check"
+
+
+streamingQuery = (line2.writeStream
+                  .foreachBatch(write_to_multiple_sinks)
+                  .option("checkpointLocation", checkpointDir)
+                  .start())
+
+
+streamingQuery.awaitTermination()
+```
+
+
+
+
+
 
 
 - Check the file
