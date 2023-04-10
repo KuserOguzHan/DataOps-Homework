@@ -10,15 +10,15 @@
  [train@localhost data-generator]$ source datagen/bin/activate
  ```
  
- -------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
- # 3. Dosya Oluştıurma Schema İçin
- ```
- [train@localhost data-generator]$ mkdir /tmp/iot-temp-input
- ```
+# 3. Dosya Oluştıurma Schema İçin
+```
+[train@localhost data-generator]$ mkdir /tmp/iot-temp-input_schema
+```
  
 ```
-python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/master/IOT-temp.csv.zip -o /tmp/iot-temp-input -shf True
+python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/master/IOT-temp.csv.zip -o /tmp/iot-temp-input_schema -oh True
 ```
  
  
@@ -27,10 +27,10 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
 # 4. Dosya Oluştıurma Input için 
 
 ``` 
-(datagen) [train@trainvm data-generator]$ mkdir /tmp/iot-temp-input_schema
+(datagen) [train@trainvm data-generator]$ mkdir /tmp/iot-temp-input 
 ``` 
 ``` 
-python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/master/IOT-temp.csv.zip -o /tmp/iot-temp-input_schema -oh True
+python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/master/IOT-temp.csv.zip -o /tmp/iot-temp-input -shf True
 ``` 
  
  
