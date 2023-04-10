@@ -43,11 +43,11 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
 ``` 
  
 ``` 
-(datagen) [train@trainvm data-generator]$ rm -rf tmp/iot-temp-input/*
+(datagen) [train@trainvm data-generator]$ rm -rf /tmp/iot-temp-input/*
 ``` 
  
 ``` 
-(datagen) [train@trainvm data-generator]$ rm -rf tmp/iot-temp-output/*
+(datagen) [train@trainvm data-generator]$ rm -rf /tmp/iot-temp-output/*
 ```
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
