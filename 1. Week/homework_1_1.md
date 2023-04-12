@@ -97,7 +97,7 @@ hdfs dfs -ls /tmp/hdfs_odev/
 
 [train@localhost play]$
 ```
-hdfs dfs -rm -r -skipTrash /tmp/hdfs_odev
+hdfs dfs -rm /tmp/hdfs_odev
 hdfs dfs -ls /tmp/
 ```
 
