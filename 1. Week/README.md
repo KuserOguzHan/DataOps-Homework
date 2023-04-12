@@ -42,3 +42,4 @@ Partitioning only gains efficiency if the data is evenly distributed, whereas in
 Apache Sqoop is a java-based tool that enables the transfer of large data between relational databases and hadoop. This transfer can be done in both directions. It can read the data from the relational database (oracle, mysql, sqlserver ...) and transfer it to the hadoop distributed file system (HDFS, Hive, Hbase ...) as well as read it from the hadoop environment and write it to the relational database.
 
 
+
