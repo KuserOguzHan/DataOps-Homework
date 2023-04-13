@@ -1,16 +1,18 @@
- # 1 Veri İndirme
- ```
- ! wget -P /home/train/datasets/  https://github.com/erkansirin78/datasets/raw/master/IOT-temp.csv.zip
- ```
+ # 1 Activate venv for airflow
  
- # 2. Aktif Etme
- ```
- [train@localhost ~]$ cd data-generator/
+```
+[train@trainvm ~]$ source ~/venvairflow/bin/activate
+```
  
- [train@localhost data-generator]$ source datagen/bin/activate
  ```
- 
- -------------------------------------------------------------------------------------------------------------------------------
+(venvairflow) [train@trainvm ~]$ sudo systemctl restart airflow
+ ```
+  
+  
+ ```
+(venvairflow) [train@trainvm ~]$ sudo systemctl start airflow-scheduler
+ ```
+
  
 
  
