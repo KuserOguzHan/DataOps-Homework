@@ -32,3 +32,5 @@
 ### Q-5
 - Write a query that returns the employees whose Python skill is greater than 70.
 
+
+
