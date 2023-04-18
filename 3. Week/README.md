@@ -1,6 +1,6 @@
 ## Question  
 
-- Use this dataset: ` https://github.com/erkansirin78/datasets/raw/master/dirty_store_transactions.csv ` 
+Use this dataset: ` https://github.com/erkansirin78/datasets/raw/master/dirty_store_transactions.csv ` 
 do the following tasks:
 
 ### 1. 
