@@ -1,9 +1,9 @@
- # 1 Veri İndirme
+ # 1. Install Data
  ```
  ! wget -P /home/train/datasets/  https://github.com/erkansirin78/datasets/raw/master/IOT-temp.csv.zip
  ```
  
- # 2. Aktif Etme
+ # 2. Activate venv
  ```
  [train@localhost ~]$ cd data-generator/
  
@@ -12,7 +12,7 @@
  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
-# 3. Dosya Oluştıurma Schema İçin
+# 3. Create New File For Schema
 ```
 [train@localhost data-generator]$ mkdir /tmp/iot-temp-input_schema
 ```
@@ -24,7 +24,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# 4. Dosya Oluştıurma Input için 
+# 4. Create New File For Input
 
 ``` 
 (datagen) [train@trainvm data-generator]$ mkdir /tmp/iot-temp-input 
@@ -36,7 +36,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# 5. Temizlik komutları
+# 5. Cleaning Commands
 
 ``` 
 (datagen) [train@trainvm data-generator]$ rm -rf /tmp/streaming/week5_1_check/*
