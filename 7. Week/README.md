@@ -4,19 +4,17 @@
 
 ### 2. Mapping must be like this:
 
-```commandline
-"LOGICALREF":    { "type": "integer" },  
+```
+"LOGICALREF":  { "type": "integer" },  
 "ITEMCODE":  { "type": "integer"  }, 
-"ITEMNAME":   { "type": "text"  },
+"ITEMNAME": { "type": "text"  },
 "AMOUNT": {"type": "float"},
 "PRICE": {"type": "float"},
 "LINENETTOTAL": {"type": "float"},
 "BRANCH": {"type": "keyword"},
 "CITY": {"type": "keyword"},
 "BRAND": {"type": "keyword"},
-"STARTDATE": {
-"type":   "date"
-},
+"STARTDATE": {"type":   "date"},
 "LOCATION": {"type": "geo_point"}
 ```
 
