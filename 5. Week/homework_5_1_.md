@@ -49,7 +49,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
 ```
 
 
-### 6. Kod
+### 6. Code
 
 ```
 from pyspark.sql import SparkSession, functions as F
@@ -114,7 +114,7 @@ Batch: 14
 ```
 
 
-### 6.2 kod 2
+### 6.2 Code 2
 
 ```
 from pyspark.sql import SparkSession, functions as F
