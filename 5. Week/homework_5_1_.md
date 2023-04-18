@@ -10,8 +10,7 @@
  [train@localhost data-generator]$ source datagen/bin/activate
  ```
  
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 
+
 ### 3. Create New File For Schema
 ```
 [train@localhost data-generator]$ mkdir /tmp/iot-temp-input_schema
@@ -22,7 +21,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
 ```
  
  
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ### 4. Create New File For Input
 
@@ -34,7 +33,6 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
 ``` 
  
  
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ### 5. Cleaning Commands
 
@@ -49,7 +47,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
 ``` 
 (datagen) [train@trainvm data-generator]$ rm -rf /tmp/iot-temp-output/*
 ```
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 ### 6. Kod
 
