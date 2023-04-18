@@ -1,18 +1,17 @@
- # 1 Veri İndirme
+ ### 1. Install Data
+ 
  ```
  ! wget -P /home/train/datasets/  https://github.com/erkansirin78/datasets/raw/master/IOT-temp.csv.zip
  ```
  
- # 2. Aktif Etme
+ ### 2. Activate venv
  ```
  [train@localhost ~]$ cd data-generator/
  
  [train@localhost data-generator]$ source datagen/bin/activate
  ```
  
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 
-# 3. Dosya Oluştıurma Schema İçin
+### 3. Create New File For Schema
 ```
 [train@localhost data-generator]$ mkdir /tmp/iot_telemetry-schema
 ```
@@ -21,10 +20,7 @@
 python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/master/iot_telemetry_data.csv.zip -o /tmp/iot_telemetry-schema -oh True
 ```
 
-
-
------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-# 4. Dosya Oluştıurma Input için 
+### 4. Create New File For Input 
 
 ``` 
 (datagen) [train@trainvm data-generator]$ mkdir /tmp/iot_telemetry-input 
@@ -35,7 +31,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# 5. Temizlik komutları
+### 5. Cleaning Commands
 
 ``` 
 (datagen) [train@trainvm data-generator]$ rm -rf /tmp/streaming/week5_2_check/*
@@ -49,6 +45,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
 (datagen) [train@trainvm data-generator]$ rm -rf /tmp/iot_telemetry-output/*
 ```
 
+### 6. Code
 
 ```
 from pyspark.sql import SparkSession, functions as F
@@ -105,16 +102,6 @@ streamingQuery = (line2.writeStream
 
 streamingQuery.awaitTermination()
 ```
-
-
-
-
-
-
-
-
-
-
 
 
 ```
