@@ -37,7 +37,8 @@ total 160
 
 ### Exit from nginx container
 
-##3 Test api
+#### Test api
+
 ```commandline
 [train@trainvm ~]$ curl -o /tmp/hour_13_supermarket_sales.csv http://localhost:5000/data/hour_13_supermarket_sales.csv
 
