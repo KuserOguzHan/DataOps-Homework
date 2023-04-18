@@ -1,4 +1,4 @@
- # 1. Install Data
+ ### 1. Install Data
  ```
  ! wget -P /home/train/datasets/  https://github.com/erkansirin78/datasets/raw/master/IOT-temp.csv.zip
  ```
@@ -12,7 +12,7 @@
  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
-# 3. Create New File For Schema
+### 3. Create New File For Schema
 ```
 [train@localhost data-generator]$ mkdir /tmp/iot-temp-input_schema
 ```
@@ -24,7 +24,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# 4. Create New File For Input
+### 4. Create New File For Input
 
 ``` 
 (datagen) [train@trainvm data-generator]$ mkdir /tmp/iot-temp-input 
@@ -36,7 +36,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
  
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# 5. Cleaning Commands
+### 5. Cleaning Commands
 
 ``` 
 (datagen) [train@trainvm data-generator]$ rm -rf /tmp/streaming/week5_1_check/*
@@ -51,7 +51,7 @@ python dataframe_to_log.py -i https://github.com/erkansirin78/datasets/raw/maste
 ```
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# 6. Kod
+### 6. Kod
 
 ```
 from pyspark.sql import SparkSession, functions as F
