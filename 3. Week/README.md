@@ -7,10 +7,10 @@ do the following tasks:
 Clean data
 
 ### 2. 
-Write clean data to hive  `test1.clean_transactions`, format should be orc.
+Write clean data to hive  `test1.clean_transactions` format should be orc.
 
 ### 3. 
-Write clean data to Postgresql `traindb.public.clean_transactions`. 
+Write clean data to Postgresql `traindb.public.clean_transactions`
 
 ### 4. 
 Write clean data to hdfs `/user/train/spark_odev_transaction` in parquet format.
