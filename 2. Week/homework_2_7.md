@@ -44,11 +44,9 @@ kafka-python==2.0.2
 
 ``` 
 
-  - admin_client.py
-
-
 ### 3. Create a Topic
 
+- admin_client.py
 ```
 from kafka.admin import KafkaAdminClient, NewTopic, ConfigResource, ConfigResourceType
 import time
