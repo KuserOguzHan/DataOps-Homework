@@ -91,67 +91,6 @@ consumer = KafkaConsumer('homework7',
 
                          bootstrap_servers=['localhost:9092'])
 
-setosa_file_obj = open("/home/train/PycharmProjects/week_2_homework_7/tmp/kafka_out/setosa_out.txt", "a")
-versicolorfile_obj = open("/home/train/PycharmProjects/week_2_homework_7/tmp/kafka_out/versicolor_out.txt", "a")
-virginicafile_obj = open("/home/train/PycharmProjects/week_2_homework_7/tmp/kafka_out/virginica_out.txt", "a")
-other_obj = open("/home/train/PycharmProjects/week_2_homework_7/tmp/kafka_out/other_out.txt", "a")
-mp = MessageParser()
-
-for message in consumer:
-
-    print("topic: %s, partition: %d, offset: %d, key: %s value: %s" % (message.topic,
-                                                 message.partition,
-                                                 message.offset,
-                                                 message.key.decode('utf-8'),
-                                                 message.value.decode('utf-8')))
-
-    species = mp.message_splitter(message.value.decode('utf-8'))
-    print("Species: {} ".format(species))
-
-    if species == "setosa":
-        setosa_file_obj.write(
-            message.topic + "|" + str(message.partition) + "|" + str(message.offset) + "|" + message.key.decode(
-                'utf-8') + "|" + message.value.decode('utf-8') + "\n")
-
-    elif species == "versicolor":
-        versicolorfile_obj.write(
-            message.topic + "|" + str(message.partition) + "|" + str(message.offset) + "|" + message.key.decode(
-                'utf-8') + "|" + message.value.decode('utf-8') + "\n")
-
-    elif species == "virginica":
-        virginicafile_obj.write(
-            message.topic + "|" + str(message.partition) + "|" + str(message.offset) + "|" + message.key.decode(
-                'utf-8') + "|" + message.value.decode('utf-8') + "\n")
-    else:
-        other_obj.write(
-            message.topic + "|" + str(message.partition) + "|" + str(message.offset) + "|" + message.key.decode(
-                'utf-8') + "|" + message.value.decode('utf-8') + "\n")
-
-
-setosa_file_obj.close()
-versicolorfile_obj.close()
-virginicafile_obj.close()
-other_obj.close()
-
-```
--after changes
-```
-from message_parser import MessageParser
-from kafka import KafkaConsumer
-import re
-
-
-consumer = KafkaConsumer('homework7',
-                         group_id='group1',
-
-                         auto_offset_reset='earliest',
-
-                         enable_auto_commit=False,
-
-                         consumer_timeout_ms=10000,
-
-                         bootstrap_servers=['localhost:9092'])
-
 setosa_file = open("/home/train/PycharmProjects/homework7/tmp/kafka_out/setosa_out.txt", "a")
 versicolor_file = open("/home/train/PycharmProjects/homework7/tmp/kafka_out/versicolor_out.txt", "a")
 virginica_file = open("/home/train/PycharmProjects/homework7/tmp/kafka_out/virginica_out.txt", "a")
@@ -199,23 +138,6 @@ other.close()
 ### 5. Create message_parser.py
 
 ```
-import re
-class MessageParser:
-
-    def message_splitter(self, msg):
-        species = re.split(",", msg)[-1]
-        switcher = {
-            'Iris-setosa': "setosa",
-            'Iris-versicolor': "versicolor",
-            'Iris-virginica': "virginica",
-            None: "other"
-        }
-        return switcher.get(species)
-
-```
-- after changes
-```
-
 import re
 class MessageParser:
 
