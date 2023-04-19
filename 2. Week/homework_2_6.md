@@ -1,4 +1,4 @@
-### 1. Qestion
+### 0. Qestion
 
 - Using Python Kafka do the following tasks:
 - Produce the names of Turkey's geographical regions to a topic you specify, using the numbers you specify at the beginning of each of them as keys. 
@@ -12,7 +12,7 @@ Key: 3, Value: Akdeniz, Partition: 2, TS: 1613224661486
 Key: 2, Value: Ege, Partition: 2, TS: 1613224667044
 ```
 
-### 2. Docker-Compose Up
+### 1. Docker-Compose Up
 
 - If docker-compose is not run, you should track following steps.
 - You should delete kafka1, kafka2, kafka3 and build docker-compose again.
@@ -38,7 +38,7 @@ Key: 2, Value: Ege, Partition: 2, TS: 1613224667044
 [train@trainvm zookeeperless_kafka]$ docker-compose up -d
 ```
 
-### 3. Create Topic with Admin_client.py in Pycharm
+### 2. Create Topic with Admin_client.py in Pycharm
 - Open pycharm editor and create new project and requirements.txt
 
 ```
@@ -79,7 +79,7 @@ print("After create topics", admin_client.list_topics())
 [train@trainvm]$ kafka-topics.sh --bootstrap-server localhost:9092 --list
 ```
 
-### 4. Create Producer
+### 3. Create Producer
 
 ```
 from kafka import KafkaProducer
@@ -101,7 +101,7 @@ for i, val in enumerate(regions):
 my_producer.close()
 ```
 
-### 5. Consumer
+### 4. Consumer
 - Run Consumer on terminal
 ```
 [train@trainvm ~]$ kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic homework1 --property print.key=true
