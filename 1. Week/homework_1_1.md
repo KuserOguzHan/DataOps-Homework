@@ -85,7 +85,7 @@
 
 ### 8. Delete the datasets
 ```
-[train@localhost ~]$ hdfs dfs -rm /tmp/hdfs_odev
+[train@trainvm ~]$ hdfs dfs -rm -r /tmp/hdfs_odev
 ```
 
 ```
