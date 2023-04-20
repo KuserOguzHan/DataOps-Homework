@@ -1,11 +1,10 @@
 ### 0. Qestion
 
-# 1. 
 `https://github.com/erkansirin78/datasets/raw/master/iot_telemetry_data.csv.zip` 
 
-- 1.1. Generate with data-generator to `~/data-generator/output` directory.
+- 1. Generate with data-generator to `~/data-generator/output` directory.
 
-- 2.2. Based on the event time calculate for each (device) 10 mins window;
+- 2. Based on the event time calculate for each (device) 10 mins window;
     - sensor (device) id
     - How many signal generated from this sensor
     - Average co and humidity    
