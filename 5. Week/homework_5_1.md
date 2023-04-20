@@ -1,3 +1,7 @@
+ ### 0.Qestion
+ 
+ 
+ 
  ### 1. Install Data
  ```
  ! wget -P /home/train/datasets/  https://github.com/erkansirin78/datasets/raw/master/IOT-temp.csv.zip
