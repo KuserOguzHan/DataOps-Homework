@@ -7,7 +7,8 @@ Generate the above data set with data-generator to "/tmp/iot-temp-input" directo
 Read this directory with Spark streaming and write it to the "/tmp/iot-temp-output" file by adding new attributes.
 
 For example, month, day of the week to the data set based on the event time.
- 
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  
  ### 1. Install Data
  ```
